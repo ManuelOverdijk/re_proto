@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://apis.google.com/js/client.js?onload=handleAuthClick"></script>
+    <script type="text/javascript">
+
+        // i hate myself
+        window.onload = function () {
+
+            document.getElementById('iframeOpen').addEventListener('click', (e)=>{
+                var iframe = document.getElementsByTagName('iframe')[0];
+                if(window.isOpen){
+                    window.isOpen = false;
+                    iframe.style.display = 'none';
+                } else {
+                    window.isOpen = true;
+                    iframe.style.display = 'inline';
+                }
+
+                e.stopPropagation();
+                e.preventDefault();
+
+            });
+
+            document.addEventListener("click",handler,true);
+            function handler(e){
+                if(!e.target.id.startsWith('button') && !e.target.id.startsWith('iframeOpen')){
+                    e.stopPropagation();
+                    e.preventDefault();
+                    var iframe = document.getElementsByTagName('iframe')[0];
+                    if(window.isOpen) {
+                        window.isOpen = false;
+                        iframe.style.display = 'none';
+                    }
+                }
+            }
+
+            var events = [];
+            events[0] = {
+                'summary': 'RE - Assignment 1',
+                'location': 'Science Park, Amsterdam',
+                'description': 'What are for this assignment the obvious sources of information to find requirements and make sense of your assignment. Identify at least two important questions to drive the requirements engineering project for the new DLO. (if you have the answer to that question, you can derive the requirements almost intuitively) Plan your requirements activities for the first four weeks. Provide a short rationale, referring to the documents you have read. Based on the thesis of Nisha Jacob and your first interviews: identify the things you want to learn in interviewing.',
+                'start': {
+                    'dateTime': '2016-09-11T20:00:00-01:00',
+                    'timeZone': 'America/Los_Angeles'
+                },
+                'end': {
+                    'dateTime': '2016-09-11T20:59:00-01:00',
+                    'timeZone': 'America/Los_Angeles'
+                },
+                'attendees': [
+                    {'email': 'youremailhere@example.com'}
+                ],
+                'reminders': {
+                    'useDefault': false,
+                    'overrides': [
+                        {'method': 'email', 'minutes': 24 * 60},
+                        {'method': 'popup', 'minutes': 10}
+                    ]
+                }
+            };
+            events[1] = {
+                'summary': 'RE - Assignment 2',
+                'location': 'Science Park, Amsterdam',
+                'description': 'Explore literature about emphatic listening, active listening and identify five verbal and non verbal cues that stimulate the interviewee in providing elaborate information. Like 1 but now identify five cues that stop . Apply techniques from 1 and 2 techniques in your interviews and assess your partner on the cues you identified in 1 and 2 Explain from the theory how memory works why some of the techniques yield more reliable memories than others. Experiment with the technique as described in "Apprenticing with the customer", can you see that this helps yield more reliable memories?',
+                'start': {
+                    'dateTime': '2016-09-18T20:00:00-01:00',
+                    'timeZone': 'America/Los_Angeles'
+                },
+                'end': {
+                    'dateTime': '2016-09-18T20:59:00-01:00',
+                    'timeZone': 'America/Los_Angeles'
+                },
+                'attendees': [
+                    {'email': 'youremailhere@example.com'}
+                ],
+                'reminders': {
+                    'useDefault': false,
+                    'overrides': [
+                        {'method': 'email', 'minutes': 24 * 60},
+                        {'method': 'popup', 'minutes': 10}
+                    ]
+                }
+            };
+            events[2] = {
+                'summary': 'RE - Assignment 3',
+                'location': 'Science Park, Amsterdam',
+                'description': 'Sense making: Read the materials about Weick and Klein. Talk to four different students about this course, and find differences about their perception about this assignment and why it helps them achieve the learning goals. Try to explain these differences using the articles of Weick and Klein. Decisions: reflect on where you spend your time on the past week. Can you still account for your time spent? Did you spent it wisely? Did you make explicit decisions about it? Can you explain your decision making using the model of naturalistic decision making?',
+                'start': {
+                    'dateTime': '2016-09-22T20:00:00-01:00',
+                    'timeZone': 'America/Los_Angeles'
+                },
+                'end': {
+                    'dateTime': '2016-09-22T20:59:00-01:00',
+                    'timeZone': 'America/Los_Angeles'
+                },
+                'attendees': [
+                    {'email': 'youremailhere@example.com'}
+                ],
+                'reminders': {
+                    'useDefault': false,
+                    'overrides': [
+                        {'method': 'email', 'minutes': 24 * 60},
+                        {'method': 'popup', 'minutes': 10}
+                    ]
+                }
+            };
+            events[3] = {
+                'summary': 'RE - Assignment 4',
+                'location': 'Science Park, Amsterdam',
+                'description': 'Browse the web to find three modelling techniques you can use in requirements engineering that you have never seen or used before. Find an example in which these are used. What are good models for organising the knowledge about the successor of Blackboard How do you manage your data in such a way you are able to quickly restructure it, given you have new knowledge and insights. ',
+                'start': {
+                    'dateTime': '2016-10-01T20:00:00-01:00',
+                    'timeZone': 'America/Los_Angeles'
+                },
+                'end': {
+                    'dateTime': '2016-10-01T20:59:00-01:00',
+                    'timeZone': 'America/Los_Angeles'
+                },
+                'attendees': [
+                    {'email': 'youremailhere@example.com'}
+                ],
+                'reminders': {
+                    'useDefault': false,
+                    'overrides': [
+                        {'method': 'email', 'minutes': 24 * 60},
+                        {'method': 'popup', 'minutes': 10}
+                    ]
+                }
+            };
+            events[4] = {
+                'summary': 'RE - Assignment 5',
+                'location': 'Science Park, Amsterdam',
+                'description': 'You will organize a prototyping based session to validate at least one of the key requirements for the future DLO. Instead of focusing on requirements, you can also focus on the vision underlying the requirements.',
+                'start': {
+                    'dateTime': '2016-10-08T20:00:00-01:00',
+                    'timeZone': 'America/Los_Angeles'
+                },
+                'end': {
+                    'dateTime': '2016-10-08T20:59:00-01:00',
+                    'timeZone': 'America/Los_Angeles'
+                },
+                'attendees': [
+                    {'email': 'youremailhere@example.com'}
+                ],
+                'reminders': {
+                    'useDefault': false,
+                    'overrides': [
+                        {'method': 'email', 'minutes': 24 * 60},
+                        {'method': 'popup', 'minutes': 10}
+                    ]
+                }
+            };
+
+            var createEvent = async function (x) {
+                let authResult = await handleAuthClick();
+                console.log(authResult);
+                gapi.client.load('calendar', 'v3', function () {
+                    console.log(events[x - 1]);
+
+                    if (window.confirm('Do you want to add this assignment to your calendar?')){
+                        var request = gapi.client.calendar.events.insert({
+                            'calendarId': 'primary',
+                            'resource': events[x - 1]
+                        });
+
+                        request.execute(function (event) {
+                            if(event.htmlLink){
+                                window.open(event.htmlLink, '_blank');
+                            }
+//                                       var iframe = document.createElement('iframe');
+////                            iframe.style.display = "none";
+//                            iframe.src = event.htmlLink;
+//                            document.body.appendChild(iframe);
+////                            iframe.style.display = ""
+                        });
+                    }
+
+                });
+            };
+
+
+            for (var x = 1; x < 5; x++) {
+                document.getElementById('button' + x).addEventListener('click', createEvent.bind(this, x));
+            }
+//            console.log('we have access');
+
+        }.bind(window);
+
+        // Your Client ID can be retrieved from your project in the Google
+        // Developer Console, https://console.developers.google.com
+        var CLIENT_ID = '278470535732-15e8vqv24vvgqlehbbaauleg49ad629q.apps.googleusercontent.com';
+
+        var SCOPES = ["https://www.googleapis.com/auth/calendar"];
+
+        /**
+         * Check if current user has authorized this application.
+         */
+        function checkAuth() {
+            gapi.auth.authorize(
+                    {
+                        'client_id': CLIENT_ID,
+                        'scope': SCOPES.join(' '),
+                        'immediate': true
+                    }, handleAuthResult);
+        }
+
+        /**
+         * Handle response from authorization server.
+         *
+         * @param {Object} authResult Authorization result.
+         */
+        function handleAuthResult(authResult) {
+            var authorizeDiv = document.getElementById('authorize-div');
+            if (authResult && !authResult.error) {
+//                window.weHaveAccess();
+                console.log('authenticated');
+            } else {
+                // Show auth UI, allowing the user to initiate authorization by
+                // clicking authorize button.
+                authorizeDiv.style.display = 'inline';
+            }
+        }
+
+        /**
+         * Initiate auth flow in response to user clicking authorize button.
+         *
+         * @param {Event} event Button click event.
+         */
+        function handleAuthClick(event) {
+            return new Promise((resolve, reject)=>{
+                gapi.auth.authorize(
+                        {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
+                        (authResult)=>resolve(authResult));
+            });
+        }
+
+        /**
+         * Load Google Calendar client library. List upcoming events
+         * once client library is loaded.
+         */
+        function loadCalendarApi() {
+            gapi.client.load('calendar', 'v3', listUpcomingEvents);
+        }
+
+        /**
+         * Print the summary and start datetime/date of the next ten events in
+         * the authorized user's calendar. If no events are found an
+         * appropriate message is printed.
+         */
+        function listUpcomingEvents() {
+            var request = gapi.client.calendar.events.list({
+                'calendarId': 'primary',
+                'timeMin': (new Date()).toISOString(),
+                'showDeleted': false,
+                'singleEvents': true,
+                'maxResults': 10,
+                'orderBy': 'startTime'
+            });
+
+            request.execute(function (resp) {
+                var events = resp.items;
+                appendPre('Upcoming events:');
+
+                if (events.length > 0) {
+                    for (i = 0; i < events.length; i++) {
+                        var event = events[i];
+                        var when = event.start.dateTime;
+                        if (!when) {
+                            when = event.start.date;
+                        }
+                        appendPre(event.summary + ' (' + when + ')')
+                    }
+                } else {
+                    appendPre('No upcoming events found.');
+                }
+
+            });
+        }
+
+        /**
+         * Append a pre element to the body containing the given message
+         * as its text node.
+         *
+         * @param {string} message Text to be placed in pre element.
+         */
+        function appendPre(message) {
+            var pre = document.getElementById('output');
+            var textContent = document.createTextNode(message + '\n');
+            pre.appendChild(textContent);
+        }
+
+    </script>
+</head>
+<body>
+<div id="calendarIframe" ><iframe src="https://calendar.google.com/calendar/embed?src=manuel.overdijk%40gmail.com&ctz=Europe/Amsterdam"  height="450" allowTransparency="true" frameborder="0" scrolling="yes" style="    width: 80%;
+    display: inline;
+    position: fixed;
+    top: 250px;
+    left: 228px;
+    z-index: 1000;
+    border: 2px solid black; display:none"></iframe></div>
+<!--<div id="authorize-div" style="display:block">-->
+    <!--<span>Authorize access to Google Calendar API</span>-->
+    <!--&lt;!&ndash;Button for the user to click to initiate auth sequence &ndash;&gt;-->
+    <!--<button id="authorize-button" onclick="handleAuthClick(event)">-->
+        <!--Authorize-->
+    <!--</button>-->
+<!--</div>-->
+<h1 id="H1_2">
+    Open Quick Links
+</h1>
+<div id="DIV_3">
+    <a id="A_4" href="#" tabindex="1" title="Open Quick Links">Quick Links</a>
+</div>
+<div id="DIV_5">
+    <div id="DIV_6">
+        <div id="DIV_7">
+            <div id="DIV_8">
+                <h2 id="H2_9">
+                    Page Landmarks
+                </h2>
+                <ul id="UL_10">
+                </ul>
+            </div>
+            <div id="DIV_11">
+                <h2 id="H2_12">
+                    Content Outline
+                </h2>
+                <ul id="UL_13">
+                </ul>
+            </div>
+        </div>
+        <div id="DIV_14">
+            <h2 id="H2_15">
+                Keyboard Shortcuts
+            </h2>
+            <ul id="UL_16">
+            </ul>
+        </div>
+    </div>
+</div>
+<h1 id="H1_17">
+</h1>
+<div id="DIV_18">
+    <div id="DIV_19">
+        <a id="A_20" href="/webapps/login/?action=logout" title="Logout">Logout</a>
+    </div>
+    <div id="DIV_21">
+        <div id="DIV_22">
+            Global Menu
+        </div>
+        <a id="A_23" href="#global-nav-flyout" tabindex="1" accesskey="m" title="Open Global Navigation menu"><img
+                src="/images/ci/ng/default_profile_avatar.png" id="IMG_24" alt=""/> Manuel Overdijk<span
+                id="SPAN_25"><span id="SPAN_26">Activity Updates</span><span id="SPAN_27"></span></span><img
+                src="/images/ci/mybb/arrowDown-topnav.png" id="IMG_28" alt="Expand Global Nav"/></a>
+        <div id="DIV_29">
+            <ul id="UL_30">
+                <li id="LI_31">
+                    <a id="A_32" href="http://blackboard.uva.nl/webapps/portal/frameset.jsp" title="Home">Home</a>
+                </li>
+                <li id="LI_33">
+                    <a id="A_34" href="#" title="Help">Help</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- global_nav.jsp -->
+
+<div id="DIV_35">
+    <table summary="Top frame table" id="TABLE_36">
+        <tbody id="TBODY_37">
+        <tr id="TR_38">
+            <td id="TD_39">
+                <div id="DIV_40">
+                    <div id="DIV_41">
+                        <a href="http://www.uva.nl" title="Universteit van Amsterdam" id="A_42"><img
+                                src="./img/uva.jpeg" alt="Universteit van Amsterdam" id="IMG_43"/></a>
+                    </div>
+                    <div id="DIV_44">
+                        <h2 id="H2_45">
+                            Top Frame Tabs
+                        </h2>
+                        <table id="TABLE_46" summary="Tab List table">
+                            <tbody id="TBODY_47">
+                            <tr id="TR_48">
+                                <td id="TD_49">
+                                    <a href="/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_21_1"
+                                       id="A_50"><span id="SPAN_51">UvA</span> <span id="SPAN_52">Tab 1 of 1 (active tab)</span></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div id="DIV_53">
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div id="DIV_54">
+    <h2 id="H2_55">
+        Current Location
+    </h2>
+    <div id="DIV_56">
+        <div id="DIV_57">
+            <div id="DIV_58">
+            </div>
+            <input type="hidden" name="showHelperSetting" id="INPUT_59"/>
+        </div>
+        <div id="DIV_60">
+            <ol id="OL_61">
+                <li id="LI_62">
+                    <a href="/webapps/blackboard/execute/courseMain?course_id=_205970_1"
+                       title="20162017.Requirements Engineering" id="A_63">20162017.Requirements Engineering</a>
+                    <div id="DIV_64">
+                        <span id="SPAN_65"> <a id="A_66" href="#contextMenu" title="Course-to-Course Navigation"><img
+                                src="./img/folder_on.gif" alt="" id="IMG_67"/></a></span>
+                    </div>
+                </li>
+                <li id="LI_68">
+                    Assignments
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div id="DIV_69">
+        <div id="DIV_70">
+            <div id="DIV_71">
+                <div id="DIV_72">
+                    <a id="A_73" title="Hide Course Menu" href="#"><img id="IMG_74" alt="Hide Course Menu"
+                                                                        src="/images/spacer.gif"/></a>
+                </div>
+                <div id="DIV_75">
+                    <input type="hidden" name="blackboard.platform.security.NonceUtil.nonce"
+                           value="ed6d62cd-3b1e-4cb1-ab25-546221d2bba2" id="INPUT_76"/>
+                    <div id="DIV_77">
+                        <div id="DIV_78">
+                            <h2 id="H2_79">
+                                Menu Management Options
+                            </h2>
+                            <ul id="UL_80">
+                                <li id="LI_81">
+                                    <a href="#" title="Refresh" id="A_82"><span id="SPAN_83"><img
+                                            src="./img/folder_on.gif" alt="Refresh" id="IMG_84"/></span></a>
+                                </li>
+                                <li id="LI_85">
+                                    <a href="#" title="Display Course Menu in a Window" id="A_86"><span
+                                            id="SPAN_87"><img src="./img/folder_on.gif"
+                                                              alt="Display Course Menu in a Window" id="IMG_88"/></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="DIV_89">
+                            <h2 id="H2_90">
+                                Course Menu:
+                            </h2>
+                            <div id="DIV_91">
+                                <div id="DIV_92">
+                                    <h3 id="H3_93">
+                                        <a href="#" title="Collapse 20162017.Requirements Engineering" id="A_94">20162017.Requirements
+                                            Engineering</a>
+                                    </h3>
+                                    <h3 id="H3_95">
+                                        <a href="/webapps/blackboard/execute/courseMain?course_id=_205970_1" id="A_96"
+                                           title="Go to Course Entry Page"><img src="./img/folder_on.gif"
+                                                                                alt="Course Entry Page"
+                                                                                id="IMG_97"/></a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <ul id="UL_98">
+                                <li id="LI_99">
+                                    <a href="/webapps/blackboard/content/launchLink.jsp?course_id=_205970_1&amp;tool_id=_132_1&amp;tool_type=TOOL&amp;mode=view&amp;mode=reset"
+                                       id="A_100"><span id="SPAN_101">Announcements</span></a>
+                                </li>
+                                <li id="LI_102">
+                                    <a href="/webapps/blackboard/content/launchLink.jsp?course_id=_205970_1&amp;toc_id=_1489813_1&amp;mode=view&amp;mode=reset"
+                                       id="A_103"><span id="SPAN_104">Home Page</span></a>
+                                </li>
+                                <li id="LI_105">
+                                    <a href="/webapps/blackboard/content/listContent.jsp?course_id=_205970_1&amp;content_id=_6140990_1&amp;mode=reset"
+                                       id="A_106"><span id="SPAN_107">Course Materials</span></a>
+                                </li>
+                                <li id="LI_108">
+                                    <a href="/webapps/blackboard/content/listContent.jsp?course_id=_205970_1&amp;content_id=_6140989_1&amp;mode=reset"
+                                       id="A_109"><span id="SPAN_110">Assignments</span></a>
+                                </li>
+                                <li id="LI_111">
+                                    <a href="/webapps/blackboard/content/listContent.jsp?course_id=_205970_1&amp;content_id=_6140992_1&amp;mode=reset"
+                                       id="A_112"><span id="SPAN_113">Course Information</span></a>
+                                </li>
+                                <li id="LI_114">
+                                    <a href="/webapps/blackboard/content/launchLink.jsp?course_id=_205970_1&amp;tool_id=_11_1&amp;tool_type=TOOL&amp;mode=view&amp;mode=reset"
+                                       id="A_115"><span id="SPAN_116">Tools</span></a>
+                                </li>
+                                <li id="LI_114">
+                                    <a href="/webapps/blackboard/content/launchLink.jsp?course_id=_205970_1&amp;tool_id=_11_1&amp;tool_type=TOOL&amp;mode=view&amp;mode=reset"
+                                       id="A_115"><span id="iframeOpen">Agenda</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="DIV_117">
+            <div id="DIV_118">
+                <div id="DIV_119">
+                    <div id="DIV_120">
+                        <div id="DIV_121">
+                            <div id="DIV_122">
+                                <img src="./img/folder_on.gif" alt="" id="IMG_123"/>
+                                <h1 id="H1_124">
+                                    <span id="SPAN_125"> <span id="SPAN_126">Assignments</span></span>
+                                </h1><span id="SPAN_127"></span>
+                            </div>
+                            <form name="contentForm"
+                                  action="listContent.jsp?content_id=_6140989_1&amp;course_id=_205970_1" method="POST"
+                                  id="FORM_128">
+                                <div id="DIV_129">
+                                    <!-- inline elements cannot be listed directly in a form. (it's invalid html) -->
+
+                                    <input type="hidden" name="rstatus" id="INPUT_130"/>
+                                    <input type="hidden" name="reviewed_content_id" id="INPUT_131"/>
+                                    <input type="hidden" name="action" id="INPUT_132"/>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="DIV_133">
+                            <h2 id="H2_134">
+                                Content
+                            </h2>
+                            <!-- remember whether this list is paged -->
+
+                            <input type="hidden" name="isPaged" value="false" id="INPUT_135"/>
+                            <!-- begin edit paging (top) -->
+
+                            <!-- end top paging edit -->
+
+                            <!-- Begin top list actionbar /paging area -->
+
+                            <ul id="UL_136">
+                                <li id="LI_137">
+                                    <img alt="" src="./img/folder_on.gif" id="IMG_138"/>
+                                    <div id="DIV_139">
+                                        <h3 id="H3_140">
+                                            <span id="SPAN_141"><span id="SPAN_142"><img
+                                                    src="/images/ci/icons/generic_updown.gif" alt=""
+                                                    id="IMG_143"/></span></span> <a
+                                                href="/webapps/assignment/uploadAssignment?content_id=_6309807_1&amp;course_id=_205970_1&amp;assign_group_id=&amp;mode=view"
+                                                id="A_144"><span
+                                                id="SPAN_145">Submit work of first four weeks here</span></a>
+                                        </h3>
+                                    </div>
+                                    <div id="DIV_146">
+                                        <div id="DIV_147">
+                                            <p id="P_148">
+                                                If your work is a document, <span id="SPAN_149"><span id="SPAN_150">plesae</span></span>
+                                                submit it here. If you created a link <span id="SPAN_151"><span
+                                                    id="SPAN_152">phantasy</span></span><span id="SPAN_153">, then we will look at it on your website.</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div id="DIV_154">
+                                    </div>
+                                </li>
+                                <li id="LI_155">
+                                    <img alt="" src="./img/folder_on.gif" id="IMG_156"/>
+                                    <div id="DIV_157">
+                                        <h3 id="H3_158">
+                                            <span id="SPAN_159"><span id="SPAN_160"><img
+                                                    src="/images/ci/icons/generic_updown.gif" alt=""
+                                                    id="IMG_161"/></span></span> <a
+                                                href="/webapps/blackboard/content/launchAssessment.jsp?course_id=_205970_1&amp;content_id=_6140993_1&amp;mode=view&amp;target=blank"
+                                                id="A_162"><span id="SPAN_163">Team and Portfolio</span></a>
+                                        </h3>
+                                    </div>
+                                    <div id="DIV_164">
+                                        <div id="DIV_165">
+                                            <p id="P_166">
+                                                Provide us the link to your porfolio
+                                            </p><br id="BR_167"/>
+                                            <p id="P_168">
+                                                Note: there is both group work and individual entries for the reading
+                                                assignments
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div id="DIV_169">
+                                    </div>
+                                </li>
+                                <li id="LI_170">
+                                    <img alt="" src="./img/folder_on.gif" id="IMG_171"/>
+                                    <div id="DIV_172">
+                                        <h3 id="H3_173">
+                                            <span id="SPAN_174"><span id="SPAN_175"><img
+                                                    src="/images/ci/icons/generic_updown.gif" alt=""
+                                                    id="IMG_176"/></span></span> <span id="SPAN_177">General information about the assignment</span>
+                                        </h3>
+                                    </div>
+                                    <div id="DIV_178">
+                                        <div id="DIV_179">
+                                            <div id="DIV_180">
+                                                Attached Files:
+                                            </div>
+                                            <div id="DIV_181">
+                                                <ul id="UL_182">
+                                                    <li id="LI_183">
+                                                        <a href="/bbcswebdav/pid-6140994-dt-content-rid-8250072_1/xid-8250072_1"
+                                                           id="A_184"><img src="/images/ci/ng/cal_year_event.gif"
+                                                                           alt="File" id="IMG_185"/> assignment general
+                                                            information.rtf</a> (<span id="SPAN_186">3.539 KB</span>)
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="DIV_187">
+                                    </div>
+                                </li>
+                                <li id="LI_188">
+                                    <img alt="" src="./img/folder_on.gif" id="IMG_189"/>
+                                    <div id="DIV_190">
+                                        <h3 id="H3_191">
+                                            <span id="SPAN_192"><span id="SPAN_193"><img
+                                                    src="/images/ci/icons/generic_updown.gif" alt=""
+                                                    id="IMG_194"/></span></span> <a
+                                                href="/webapps/blackboard/content/listContent.jsp?course_id=_205970_1&amp;content_id=_6140995_1"
+                                                id="A_195"><span
+                                                id="SPAN_196">Week 1, starting Monday 5 September</span></a><span
+                                                style="padding-top:10px; display:block; cursor:pointer;" id="button1"> Add to calendar</span>
+                                        </h3>
+                                    </div>
+                                    <div id="DIV_197">
+                                    </div>
+                                    <div id="DIV_198">
+                                    </div>
+                                </li>
+                                <li id="LI_199">
+                                    <img alt="" src="./img/folder_on.gif" id="IMG_200"/>
+                                    <div id="DIV_201">
+                                        <h3 id="H3_202">
+                                            <span id="SPAN_203"><span id="SPAN_204"><img
+                                                    src="/images/ci/icons/generic_updown.gif" alt=""
+                                                    id="IMG_205"/></span></span> <a
+                                                href="/webapps/blackboard/content/listContent.jsp?course_id=_205970_1&amp;content_id=_6140996_1"
+                                                id="A_206"><span
+                                                id="SPAN_207">Week 2, starting Monday 12 September</span></a> <span
+                                                style="padding-top:10px; display:block; cursor:pointer;" id="button2">Add to calendar</span>
+                                        </h3>
+                                    </div>
+                                    <div id="DIV_208">
+                                    </div>
+                                    <div id="DIV_209">
+                                    </div>
+                                </li>
+                                <li id="LI_210">
+                                    <img alt="" src="./img/folder_on.gif" id="IMG_211"/>
+                                    <div id="DIV_212">
+                                        <h3 id="H3_213">
+                                            <span id="SPAN_214"><span id="SPAN_215"><img
+                                                    src="/images/ci/icons/generic_updown.gif" alt=""
+                                                    id="IMG_216"/></span></span> <a
+                                                href="/webapps/blackboard/content/listContent.jsp?course_id=_205970_1&amp;content_id=_6140997_1"
+                                                id="A_217"><span
+                                                id="SPAN_218">Week 3, starting Monday 19 September</span></a> <span
+                                                style="padding-top:10px; display:block;cursor:pointer;" id="button3">Add to calendar</span>
+                                        </h3>
+                                    </div>
+                                    <div id="DIV_219">
+                                    </div>
+                                    <div id="DIV_220">
+                                    </div>
+                                </li>
+                                <li id="LI_221">
+                                    <img alt="" src="./img/folder_on.gif" id="IMG_222"/>
+                                    <div id="DIV_223">
+                                        <h3 id="H3_224">
+                                            <span id="SPAN_225"><span id="SPAN_226"><img
+                                                    src="/images/ci/icons/generic_updown.gif" alt=""
+                                                    id="IMG_227"/></span></span> <a
+                                                href="/webapps/blackboard/content/listContent.jsp?course_id=_205970_1&amp;content_id=_6140998_1"
+                                                id="A_228"><span
+                                                id="SPAN_229">Week 4, starting Monday 26 September</span></a><span
+                                                style="padding-top:10px; display:block;cursor:pointer;" id="button4"> Add to calendar</span>
+                                        </h3>
+                                    </div>
+                                    <div id="DIV_230">
+                                    </div>
+                                    <div id="DIV_231">
+                                    </div>
+                                </li>
+                                <li id="LI_232">
+                                    <img alt="" src="./img/folder_on.gif" id="IMG_233"/>
+                                    <div id="DIV_234">
+                                        <h3 id="H3_235">
+                                            <span id="SPAN_236"><span id="SPAN_237"><img
+                                                    src="/images/ci/icons/generic_updown.gif" alt=""
+                                                    id="IMG_238"/></span></span> <a
+                                                href="/webapps/blackboard/content/listContent.jsp?course_id=_205970_1&amp;content_id=_6140999_1"
+                                                id="A_239"><span id="SPAN_240">Wk 5-8: Final experiment</span></a> <span
+                                                style="padding-top:10px; display:block;cursor:pointer;" id="button5">Add to calendar</span>
+                                        </h3>
+                                    </div>
+                                    <div id="DIV_241">
+                                        <div id="DIV_242">
+                                            <p id="P_243">
+                                                You can do this in threesomes or foursomes
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div id="DIV_244">
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- Begin bottom list action bar. -->
+
+                            <!-- End bottom list action bar. -->
+
+                            <!-- begin edit paging (bottom) -->
+
+                            <!-- end edit paging (bottom) -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" id="SCRIPT_245">page.bundle.addKey('inlineconfirmation.close', 'Close');
+page.bundle.addKey('inlineconfirmation.refresh', 'Refresh');
+page.bundle.addKey('hidden.link.close.menu', 'End of menu. Click to return to associated item.');
+page.bundle.addKey('hidden.link.close.form', 'End of form. Click to return to associated item.');
+page.bundle.addKey('lightbox.loading', 'Loading...');
+page.bundle.addKey('yt.stopped', 'Stopped:');
+page.bundle.addKey('yt.playing', 'Playing:');
+page.bundle.addKey('yt.cued', 'Cued:');
+page.bundle.addKey('yt.buffering', 'Buffering:');
+page.bundle.addKey('yt.paused', 'Paused:');
+page.bundle.addKey('yt.ended', 'Ended:');
+page.bundle.addKey('yt.play', 'Play');
+page.bundle.addKey('yt.pause', 'Pause');
+page.bundle.addKey('yt.mute', 'Mute');
+page.bundle.addKey('yt.unmute', 'Unmute');
+page.bundle.addKey('lightbox.overlay', '{0} has been opened as a lightbox overlaying the current page.');
+page.bundle.addKey('display.playerControls', 'Player Controls');
+page.bundle.addKey('display.videoPlayerControls', 'Video Player Controls');
+page.bundle.addKey('display.play', 'Play');
+page.bundle.addKey('display.stop', 'Stop');
+page.bundle.addKey('display.volumeUp', 'Volume Up');
+page.bundle.addKey('display.volumeDown', 'Volume Down');
+page.bundle.addKey('display.mute', 'Mute');
+page.bundle.addKey('display.videoStatus', 'Video Status');
+page.bundle.addKey('display.closePlayerControls', 'Close Player Controls');
+page.bundle.addKey('display.embeddedVideoPlayer', 'Embedded Video Player');
+page.bundle.addKey('display.of', 'of');
+page.bundle.addKey('display.view.on.flickr', 'View Photo on Flickr');
+page.bundle.addKey('mashups.content.data.msg', 'We are unable to display the mashup content. This happens if the system detects an invalid URL. Remove the mashup item and try again to resolve this issue.');
+page.bundle.addKey('contextmenu.frame.title', 'Menu frame');
+page.bundle.addKey('frameset.contentframe.title', 'Content');
+page.bundle.addKey('common.pair.paren', '{0} ({1})');
+page.bundle.addKey('coursemenu.show', 'Show Course Menu');
+page.bundle.addKey('coursemenu.hide', 'Hide Course Menu');
+page.bundle.addKey('dynamictree.expand', 'Expand');
+page.bundle.addKey('dynamictree.collapse', 'Collapse');
+page.bundle.addKey('dynamictree.expand.folder', 'Expand {0} tree folder');
+page.bundle.addKey('dynamictree.collapse.folder', 'Collapse {0} tree folder');
+page.bundle.addKey('dragdrop.accessible.error.chooseOption', 'Select an item first.');
+page.bundle.addKey('dragdrop.accessible.empty', 'No items available to reposition.');
+page.bundle.addKey('dragdrop.accessible.complete', 'Items have been reordered.');
+page.bundle.addKey('dragdrop.accessible.complete.nochange', 'No ordering changes made.');
+page.bundle.addKey('closeStr', 'Close');
+page.bundle.addKey('moreOptionsStr', 'Click to see options');
+page.bundle.addKey('hiddenStr', 'This link is hidden from students');
+page.bundle.addKey('emptyStr', 'This link has no content');
+page.bundle.addKey('entryPointChangeConfirmStr', 'The entry point will be changed to the next available Content');
+page.bundle.addKey('subheaderColonStr', 'Subheader {0}');
+page.bundle.addKey('confirmQuickEnrollStr', 'You will be given the role: {0}. Proceed?');
+page.bundle.addKey('enterSearchKeyStr', 'Enter Search Criteria.');
+page.bundle.addKey('courseWelcomePageLbTitle', 'Quick Setup Guide');
+page.bundle.addKey('expandCollapse.expand.section.nocolon', 'Expand');
+page.bundle.addKey('expandCollapse.collapse.section.nocolon', 'Collapse');
+page.bundle.addKey('expandCollapse.expand.section.param', 'Expand {0}');
+page.bundle.addKey('expandCollapse.collapse.section.param', 'Collapse {0}');
+page.bundle.addKey('accessDeniedMsg', 'Access Denied');
+page.bundle.addKey('tool.activity.description', 'activity updates');
+page.bundle.addKey('breadcrumbs.expand', 'Click to expand the breadcrumbs');
+</script>
+<script type="text/javascript" id="SCRIPT_246">Event.observe(window, 'load', function () {
+    displayMathImgInline(document.getElementById('content_listContainer').getElementsByTagName('img'));
+});
+</script>
+<script type="text/javascript" id="SCRIPT_247">function markReviewed(itemId) {
+    document.contentForm.rstatus.value = "review";
+    document.contentForm.reviewed_content_id.value = itemId;
+    document.contentForm.submit();
+}
+
+function markUnreviewed(itemId) {
+    if (confirm("This will mark the item as unreviewed. Continue?")) {
+        document.contentForm.rstatus.value = "unreview";
+        document.contentForm.reviewed_content_id.value = itemId;
+        document.contentForm.submit();
+    }
+}
+</script>
+<script type="text/javascript" id="SCRIPT_248">var course_id = "_205970_1";
+var courseTitle = "20162017.Requirements Engineering";
+var confirmDeleteMenuItemMsg = "Are you sure you want to delete this item?";
+var confirmQuickUnenrollMsg = "Any user data created while quick-enrolled in this course will be deleted. Proceed?";
+var confirmQuickEnrollMsg = "You will be given the role: Instructor. Proceed?";
+var inNewWindow = false;
+var theCourseMenu;
+</script>
+<script type="text/javascript" id="SCRIPT_249">globalNavigation.init();
+Event.observe(window, 'resize', globalNavigation.onResize);
+</script>
+<script type="text/javascript" id="SCRIPT_250">page.bundle.addKey('globalnav.menu.expand', 'Expand\x20Global\x20Nav');
+page.bundle.addKey('globalnav.menu.collapse', 'Collapse\x20Global\x20Nav');
+</script>
+<script type="text/javascript"
+        id="SCRIPT_251">page.bundle.addKey('quick_links.link.title', 'Navigate\x20to\x20element\x20\x7B1\x7D\x20of\x20type\x20\x7B2\x7D\x20in\x20\x7B0\x7D\x20frame');
+page.bundle.addKey('quick_links.lightbox_title', 'Quick\x20Links');
+page.bundle.addKey('quick_links.link_title', 'Open\x20Quick\x20Links');
+page.bundle.addKey('quick_links.hotkey.shift', 'Shift');
+page.bundle.addKey('quick_links.hotkey.control', 'Ctrl');
+page.bundle.addKey('quick_links.hotkey.alt', 'Alt');
+page.bundle.addKey('quick_links.hotkey.combination_divider', '\x2B');
+</script>
+<script type="text/javascript" id="SCRIPT_252">quickLinks.initialize(['']);
+</script>
+<script type="text/javascript" id="SCRIPT_253">globalNavMenu.init(true);
+</script>
+<script type="text/javascript" id="SCRIPT_254">social.Profile.MY_PROFILE_TOOL_ID = 'BB-CORE_____myProfile';
+social.Profile.MY_PROFILE_TOOL_URI = '/webapps/bb-social-learning-bb_bb60/execute/mybb?cmd=display&toolId=BB-CORE_____myProfile&location=';
+</script>
+<script type="text/javascript" id="SCRIPT_255">FastInit.addOnLoad(function () {
+    if (window.DWREngine) {
+        try {
+            DWREngine.beginBatch();
+        } catch (ignore) {
+        }
+    }
+    page.decoratePageBanner();
+    new genericList.CheckboxRadioController("content_listContainer");
+    page.ContextMenu.hideMenuDiv('5a5e2d97ea3b4ab29aa273c921bc1c3a');
+    new page.PageHelpToggler(true, 'Help is On: Click to hide page help.', 'Help is Off: Click to show page help.', false);
+    breadcrumbs.rightMostNavItem = 'content';
+    breadcrumbs.rightMostParentURL = '/webapps/blackboard/execute/courseMain?course_id=_205970_1';
+    new page.PageMenuToggler(true, 'courseMenuToggle_205970_1', true);
+    courseMenu.nonceKey = 'blackboard.platform.security.NonceUtil.nonce.ajax';
+    courseMenu.nonceValue = '3eedad49-ae92-489a-9061-7ee07d166050';
+    new page.PaletteController('courseMenuPalette', 'courseMenu_link', false, false);
+    theCourseMenu = new courseMenu.CourseMenu('/webapps/blackboard/execute/doCourseMenuAction', '/webapps/blackboard/execute/getCourseMenuContextMenu');
+    welcomeOverlay.initOverlay();
+    tool_service.init('300000', 'Suppress-Session-Timestamp-Update');
+    if (typeof(initEditors) == 'function') {
+        initEditors();
+    }
+    ;
+    if (window['org'] && window['org']['owasp']) {
+        org.owasp.esapi.ESAPI.initialize();
+    }
+    ;
+    quickLinks.createHelper();
+    if (window.DWREngine) {
+        try {
+            DWREngine.endBatch();
+        } catch (ignore) {
+        }
+    }
+    BrowserSpecific.registerListeners();
+});
+</script>
+</body>
+</html>
